@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+}
+
+.flex-container {
+    min-height: 100vh;
+    display: flex;
+    padding: 0;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+    /*justify-content: space-evenly; Alinear al eje principal*/
+    justify-content: center;
+    align-content: space-evenly;
+    /*align-items: center;*/
+}
+
+.flex-item {
+    background-color: purple;
+    width: 200px;
+    aspect-ratio: 1;
+    margin: 5px;
+    list-style: none;
+    color: blanchedalmond;
+    font-size: 5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item01 {
+    order: 12;
+}
+
+@media (max-width: 800px) {
+    .item01 {
+        
+    }
+}
+
+.item02 { order: 0;}
+.item03 { order: 7;}
+.item04 { order: 1;}
+.item05 { order: 8;}
+.item06 { order: 2;}
+.item07 { order: 9;}
+.item08 { order: 3;}
+.item09 { order: 10;}
+.item10 { order: 4;}
+.item11 { order: 11;}
+.item12 { order: 5;}
+

@@ -1,0 +1,179 @@
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffd73a;
+    
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "picture header header header"
+    "aside main main main";
+    margin: 100px auto;
+    width: 80%;
+    box-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px brown;
+}
+
+
+hr {
+    border: 2px solid #ffd73a;
+    margin: 45px 40px 0 20px;
+    max-inline-size: 90%;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: .90em;
+    color: grey;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h1 span {
+    color: black
+}
+
+h2 span {
+    color: black;
+}
+
+h2 {
+    font-size: 30px;
+    color: grey;
+    text-transform: uppercase;
+    line-height: .90em;
+    margin-left: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 60px 0 30px 0;
+}
+
+h4 {
+    font-size: 18px;
+    color: black;
+    line-height: 1.2em;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+    height: 267px;
+    z-index: 1;
+}
+
+picture {
+    grid-area: picture;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 0;
+    width: 300px;
+    height: 267px;
+    background-color: white;
+    
+}
+
+.foto-perfil {
+    border: 2em solid white;
+    border-top: none;
+    border-radius: 0 0 125px 125px;
+    width: 65%;
+    padding-top: 50px;
+    background-color: #ffd73a   ;
+}
+
+main {
+    grid-area: main;
+    background-color: white;
+    padding-left: 20px;
+}
+
+.grid-exp-lab ul {
+    list-style: none;
+    text-align: justify;
+    margin-right: 40px;
+    margin-left: 0;
+    padding: 0;
+}
+
+li .p-experiencia {
+    border-left: 5px solid #ffd73a;
+    padding-left: 30px;
+    margin: 30px 0 30px 0;
+}
+
+.grid-habilidades ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.grid-habilidades li {
+    display: inline-block;
+    text-align: center;
+    margin-right: 50px;
+}
+
+.grid-intereses ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.grid-intereses li {
+    display: inline-block;
+    text-align: center;
+    margin-right: 50px;
+}
+main .iconos-intereses {
+    margin: 0;
+    padding: 0;
+    color: #ffd73a;
+}
+
+/*A partir de aqui, surgen los estilos de los elementos contenidos en el ASIDE*/
+
+aside {
+    grid-area: aside;
+    min-width: 300px;
+    background-color: rgb(243, 242, 242);
+    padding-top: 110px;
+}
+
+.p-aside {
+    font-size: 15px;
+}
+.grid-contacto {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.iconos-contacto {
+    height: 20px;
+}
+
+.grid-educacion {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.grid-referencias {
+    margin-left: 20px;
+    margin: 20px;
+}

@@ -1,0 +1,37 @@
+body{
+    background-color: tomato;
+    color: white;
+}
+
+h2 {
+    color: black;
+}
+
+#purpura {
+    color: purple;
+}
+
+.varios-purpuras {
+    color: purple;
+    text-decoration: line-through;
+}
+
+.green {
+    color: greenyellow;
+}
+
+.texto-centrado {
+    text-align: center;
+}
+
+nav nav-principal {
+    color: ;
+}
+
+nav a {
+    color: turquoise;
+}
+
+main a {
+    color: greenyellow;
+}
