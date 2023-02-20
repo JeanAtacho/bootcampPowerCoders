@@ -159,14 +159,55 @@ aside {
 .p-aside {
     font-size: 15px;
 }
+
+
+
+/*Estilos css para redes sociales*/
+.socials{
+list-style: none;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 1rem 0rem 1rem 0rem;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #ffd73a;
+    border: 2px solid #ffd73a;
+    padding-top: 7px;
+    padding-bottom: 2px;
+    padding-left: 3.5px;
+    padding-right: 4px;
+
+    border-radius: 50%;
+
+}
+.socials a i{
+    font-size: 1.5rem;
+    width: 20px;
+    transition: color .4s ease;
+    justify-content: center;
+}
+.socials a:hover i{
+    color: grey;
+}
+
+
+
+
+
 .grid-contacto {
     margin-left: 20px;
     margin-right: 20px;
 }
 
 .iconos-contacto {
-    height: 20px;
+    color: #ffd73a;
 }
+
 
 .grid-educacion {
     margin-left: 20px;
