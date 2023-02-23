@@ -198,4 +198,29 @@ console.log(1 <= 1)         // Si es menor o igual que
 
 console.log(a == 1 && b == 2)       // Si 1 es true 'y' 2 es true (Se deben cumplir ambas condiciones para que todo sea verdadero, una vez que evalua una condicion falsa, deja de evaluar el resto)
 console.log(a == 1 || b == 2)       // Si 1 es true "o" 2 es true (con que una condicion sea verdadera es todo verdadero, encuentra una condicion verdadera y deja de evaluar)
+//console.log( edad >= 18 || (licencia_conducir === true && conduce_baja_velocidad) )
+
+/*
+const edad = 19
+if (edad > 17) console.log('Bienvenido, puedes tomar alcohol')
+*/
+
+const edad = 19
+const mayorDeEdad = edad > 17
+mayorDeEdad
+
+if (mayorDeEdad === true){
+    console.log('El resultado es verdadero')
+}else {
+    console.log('El resultado es falso')
+}
+
+if (mayorDeEdad) [
+    console.log('Es menor de edad')
+]
+
+
+
+
+
 
