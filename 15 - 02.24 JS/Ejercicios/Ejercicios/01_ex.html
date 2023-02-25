@@ -20,6 +20,17 @@
 </head>
 <body>
   <p class="text"></p>
-  <script></script>
+
+  <!-- 1. Prompt para obtener valor de variable e imprimir ese valor en alguna parte del HTML -->
+  <script>
+    //seleccionar el elemento html
+    const text = document.querySelector("p.text")
+
+    //preguntar al usuario el nombre
+    const name = prompt('Hola, como te llamas?')
+
+    //asignar el nombre al texto de la constante 
+    text.innerHTML = `Bienvenido/a ${name}`
+  </script>
 </body>
 </html>

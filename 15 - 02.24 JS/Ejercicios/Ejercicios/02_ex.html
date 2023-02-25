@@ -19,7 +19,37 @@
   </style>
 </head>
 <body>
-  <p class="text"></p>
-  <script></script>
+
+  <p class="precioNeto"></p>
+
+  <!-- 2. Sacar el iva a pagar desde el precio definido en un promtp. El cálculo debe ser generado en una función aparte. -->
+  <script>
+      //pedir la cantidad en neto
+      //convertir ese texto en numero
+      //crear una funcion que genere el calculo
+      //llamar a la funcion y entregarle como argumento, el numero de la cantidad neta
+
+function calcularIVA() {
+
+    const precioNeto = prompt("Introduce el precio neto:");
+
+    const iva = precioNeto * 0.21;
+
+    const precioTotal = Number(precioNeto) + iva;
+
+    alert(
+      `
+      EMPRESA SL
+-------------------------------------
+      PRECIO NETO = ${precioNeto}€.
+        IVA (21%)  = ${iva}€.
+_____________________________________
+    PRECIO TOTAL = ${precioTotal}€
+    `);
+}
+
+calcularIVA();
+
+  </script>
 </body>
 </html>
