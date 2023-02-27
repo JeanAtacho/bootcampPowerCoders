@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="products"></ul>
+    <script>
+        const products_html = document.querySelect('.products')
+        const products = ('Shampoo', 'Jabon', 'Carne', 'Huevos', 'Yogurt', 'Pasta de dientes')
+        // push es para incertar al final del array
+        products.push('Naranjas')
+        //products[3] = 'Mandarinas'
+        
+        products(products.length) = 'Mandarinas'
+
+        for (const product of products) {
+            products_html.innerHTML += `<li>${product}</li>`
+        }
+    </script>
+</body>
+</html>

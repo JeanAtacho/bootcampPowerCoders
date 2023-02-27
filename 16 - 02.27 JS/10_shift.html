@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="products"></ul>
+
+    <script>
+        const products_html = document.querySelector('.products')
+        const products = ('Shampoo', 'Jabon', 'Carne', 'Huevos', 'Yogurt', 'Pasta de dientes')
+
+        const product = products.shift()
+        console.log(product)
+
+        for (const product of products) {
+            product_html.innerHTML += `<li>${product}</li>`
+        }
+    </script>
+</body>
+</html>

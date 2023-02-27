@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+</head>
+<body>
+    <h1>Productos:</h1>
+    <ul id="productos-lista"></ul>
+    <script>
+        //preguntar 3 veces por el nombre de un producto.
+        //esos productos guardarlos en un variable.
+        //una vez completados esos 3 productos, mostrarlos en pantalla.
+        //puede ser un console.log o la impresion en el HTML.
+
+        let productos = [];
+        for (let i = 0; i < 3; i++) {
+        let producto = prompt("Introduce el nombre del producto:");
+        productos.push(producto);
+        }
+
+        let lista = document.getElementById("productos-lista");
+        productos.forEach(function(producto) {
+        let li = document.createElement("li");
+        li.textContent = producto;
+        lista.appendChild(li);
+        });
+
+    
+    </script>
+</body>
+</html>

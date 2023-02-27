@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="products"></ul>
+    <script>
+        const products_list = document.querySelector('ul.products')
+        const products = ['Shampoo', 'Jabon', 'Carne', 'Huevos', 'Yogour', 'Pasta de dientes']
+        for (let index = 0; index < products.length; index++) {
+        products_list.innerHTML += '<li>' + products[index] + '</li>'
+        }
+        for (let index = products.length - 1; index >= 0; index--) {
+        products_list.innerHTML += '<li>' + products[index] + '</li>'
+        }
+    </script>
+</body>
+</html>

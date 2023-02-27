@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+</head>
+<body>
+    <h1>Ejercicio</h1>
+    <ul class="list"></ul>
+    <script>
+    const people = {
+        Maria: 20,
+        Ana: 14,
+        Luis: 16,
+        Pepe: 35,
+        Manuel: 50,
+        Teresa: 12,
+        Daniel: 27,
+        Irene: 23,
+        Alex: 10,
+    };
+    const people_list = document.querySelector('.list')
+    const people_array = Object.entries(people)
+    console.log(people_array)
+    for (const person of people_array) {
+        if (person[1] >= 18) {
+            people_list.innerHTML += `<li> ${person[0]} es mayor de edad </li>`
+        } else {
+            people_list.innerHTML += `<li> ${person[0]} es menor de edad </li>`
+        }
+    }
+    </script>
+</body>
+</html>
