@@ -19,11 +19,65 @@
   
   <!-- 7. Piedra, papel o tijera, 3 veces. Quién gana?  -->
   <script>
-    // solicitar al usuario que elija piedra, papel o tijera.
-    //Mediante randon vamos a elegir la jugada del computador/ordenador
-    //homogenizar ambas opciones
+    
+    
     //comparar las respuestas
     //entregar respuesta del ganador en el HTML
+
+let userScore = 0;
+let computerScore = 0;
+let rounds = 3;
+
+for (let i = 0; i < rounds; i++) {
+  // solicitar al usuario que elija piedra, papel o tijera.
+  let userChoice = prompt("Elige piedra, papel o tijera:");
+  //Mediante randon vamos a elegir la jugada del computador/ordenador
+  let computerChoice = Math.random();
+  if (computerChoice < 0.33) {
+    computerChoice = "piedra";
+  } else if (computerChoice < 0.67) {
+    computerChoice = "papel";
+  } else {
+    computerChoice = "tijera";
+  }
+  // Homogenizar ambas opciones
+  userChoice = userChoice.toLowerCase();
+  // Comparar las respuestas y determinar el ganador de la ronda
+  let result;
+  if (userChoice === computerChoice) {
+    result = "Empate";
+  } else if (
+    (userChoice === "piedra" && computerChoice === "tijera") ||
+    (userChoice === "tijera" && computerChoice === "papel") ||
+    (userChoice === "papel" && computerChoice === "piedra")
+  ) {
+    result = "Ganaste";
+    userScore++;
+  } else {
+    result = "Perdiste";
+    computerScore++;
+  }
+
+  // Mostrar la respuesta al usuario
+  alert(`Elegiste ${userChoice} y la computadora eligió ${computerChoice}. ${result}`);
+}
+
+// Determinar el ganador del juego
+let gameResult;
+if (userScore === computerScore) {
+  gameResult = "Empate";
+} else if (userScore > computerScore) {
+  gameResult = "Ganaste el juego";
+} else {
+  gameResult = "Perdiste el juego";
+}
+
+// Mostrar el resultado final del juego en el HTML
+document.write(`<p>Resultado final: ${gameResult}. Tu puntuación: ${userScore}. Puntuación de la computadora: ${computerScore}.</p>`);
+
+
+
+
   </script>
 </body>
 </html>
