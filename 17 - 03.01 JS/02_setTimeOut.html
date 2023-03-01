@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time Out</title>
+</head>
+<body>
+    <h1 class="titulo"></h1>
+    <ul class="peliculas"></ul>
+
+    <script>
+        const title = document.querySelector('.titulo')
+        const moviesList = document.querySelector('.peliculas')
+
+
+        const movies = [
+            'Good Fellas.',
+            'Los Picapiedras.',
+            'Star Wars.',
+            'The green Book.',
+            'Spider Man.',
+            'Los Advengers.',
+            'Batman.',
+            'Red Social.',
+            'El milagro de P.Tinto.',
+            'Mary Poppins.',
+            'Avatar.',
+            'SuperMan.',
+            'Yo, Robot.',
+            'El senor de los Anillos.',
+            'Malditos Bastardos.',
+            "Mario Bros."
+        ]
+
+        const console_text = () => title.innerText = 'Lista de peliculas completada'
+        setTimeout(console_text, 10 * 800)
+        title.innerText = 'Esperando...'
+
+        movies.forEach((movie, index) => {
+            setTimeout(() => {
+                moviesList.innerHTML += `<li>${movie}</li>`
+            }, 500 * index)
+        })
+
+
+
+
+        /* una opcion
+        const title = document.querySelector('.titulo')
+        const console_text = () => title.innerText = 'Hola Mundo Cruel!'
+        setTimeout(console_text, 10 * 1000)
+        title.innerText = 'Esperando...'
+
+        /* otra opcion
+        setTimeout(() => {
+            title.innerText = 'Hola mundo cruel!'
+        }, 10 * 1000);
+        */
+    </script>
+</body>
+</html>

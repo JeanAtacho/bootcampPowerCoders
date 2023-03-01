@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <!--  -->
+
+<script>
+
+// Filtrar del array users todos los usuarios mayores y menores de edad
+// cada uno de los grupos debe estar en una variable distinta.
+// una vez filtrados los usuarios debera crearse por cada variable un array de objetos donde cada usuario tenga nombre y edad
+//finalmente tomar cada uno de esos arrays filtrados e imprimirlos en el html especificando: ${nombre}, ${edad}.
+
+const underAgesDiv = document.querySelector('.underAges')
+const adultsDiv = document.querySelector('.adultsAges')
+const names = [
+    'Manuel',
+    'José',
+    'Francisco',
+    'David',
+    'Juan',
+    'Javier',
+    'José Antonio',
+    'Daniel',
+    'José Luis',
+    'María Carmen',
+    'María',
+    'Carmen',
+    'Ana María',
+    'Josefa',
+    'María Pilar',
+    'Isabel',
+    'Laura',
+    'María Dolores',
+    'María Teresa'
+    ]
+
+const family_name = [
+    'García',
+    'Rodríguez',
+    'González',
+    'Fernández',
+    'López',
+    'Martínez',
+    'Sánchez',
+    'Pérez',
+    'Gómez',
+    'Martín'
+    ]
+
+function randomNumber(maxNum) {
+    return Math.floor(Math.random() * maxNum)
+    }
+
+const users = names.map(name => ({ 
+    firstName: name,
+    lastName: family_name[randomNumber(family_name.length)],
+    age: randomNumber(60)
+    }))
+
+    console.log(users)
+
+// Filtrar del array users todos los usuarios mayores y menores de edad
+
+//const underAges = users.filter(user => user['age'] < 18)
+const adult_age = 18
+const underAges = users.filter(user => user.age < adult_age)
+const adults = users.filters(user => user.age >= adult_age)
+
+// una vez filtrados los usuarios debera crearse por cada variable un array de objetos donde cada usuario tenga nombre y edad
+const underAgesArr = underAges.map(user => {
+    return {
+        name: user.firstName,
+        age: user.age
+    }
+})
+const adultsArr = adults.map(user => {
+    return {
+        name: user.firstName,
+        age: user.age
+    }
+})
+
+
+
+//finalmente tomar cada uno de esos arrays filtrados e imprimirlos en el html especificando: ${nombre}, ${edad}.
+for (const user of underAgesArr) {
+    underAgesDiv.innerHTML += `<li>${user.name}, ${user.age}, anos</li>`
+}
+
+for (const user of adultsArr) {
+    adultsDiv.innerHTML += `<li>${user.name}, ${user.age}, anos</li>`
+}
+
+console.log(adultsArr);
+
+
+</script>
+</body>
+</html>

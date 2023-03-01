@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <!--  -->
+    
+<script>
+
+// Filtrar del array users todos los usuarios mayores y menores de edad
+// cada uno de los grupos debe estar en una variable distinta.
+// una vez filtrados los usuarios debera crearse por cada variable un array de objetos donde cada usuario tenga nombre y edad
+//finalmente tomar cada uno de esos arrays filtrados e imprimirlos en el html especificando: ${nombre}, ${edad}.
+
+const underAgesDiv = document.querySelector('.underAges')
+const adultsDiv = document.querySelector('.adultsAges')
+const names = [
+    'Manuel',
+    'José',
+    'Francisco',
+    'David',
+    'Juan',
+    'Javier',
+    'José Antonio',
+    'Daniel',
+    'José Luis',
+    'María Carmen',
+    'María',
+    'Carmen',
+    'Ana María',
+    'Josefa',
+    'María Pilar',
+    'Isabel',
+    'Laura',
+    'María Dolores',
+    'María Teresa'
+    ]
+
+const family_name = [
+    'García',
+    'Rodríguez',
+    'González',
+    'Fernández',
+    'López',
+    'Martínez',
+    'Sánchez',
+    'Pérez',
+    'Gómez',
+    'Martín'
+    ]
+
+function randomNumber(maxNum) {
+    return Math.floor(Math.random() * maxNum)
+    }
+
+const users = names.map(name => ({ 
+    firstName: name,
+    lastName: family_name[randomNumber(family_name.length)],
+    age: randomNumber(60)
+    }))
+
+    console.log(users)
+
+const adult_age = 18
+
+
+const users_Arr = users.map(user => {
+    return {
+        name: user.firstName,
+        age: user.age
+    }
+})
+
+const underAges = users_arr.filter(user => user.age < adult_age)
+const adults = users_arr.filters(user => user.age >= adult_age)
+
+const underAgesHTML = underAges.map(user => `<li>${user.name}, ${user.age}, anos</li>`)
+underAgesDiv.innerHTML = underAgesHTML.join(' ')
+
+const adultsHTML = adults.reduce((acc, cur) => acc + `<li>${user.name}, ${user.age}, anos.</li>`, '')
+adultsDiv.innerHTML = adultsHTML
+
+const num = [1,2,3,4,5].reduce((suma, actual) => suma + actual, 0)
+log(num)
+
+
+</script>
+</body>
+</html>
