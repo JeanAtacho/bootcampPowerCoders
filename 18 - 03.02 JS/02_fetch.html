@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo Fetch</title>
+</head>
+<body>
+    <article class="user"></article>
+    <script>
+        // globbal | funcion | bloque 
+        /* //De este modo hacemos la consulta por la info de 1 solo contacto: 
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json(res))
+        .then(user => {
+            console.log(user)
+            const article = document.querySelector('.user')
+            article.innerHTML = `
+            <h2>${user.name}</h2>
+            <h4>${user.email}</h4>
+            <p class = "phone">${user.phone}</p>
+            <div>
+                <a href="https://${user.website}">${user.website}</a>
+            </div>
+            `
+        })
+        */
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json(res))
+        .then(users => {
+            const article = document.querySelector('.user')
+            const html = users.map(user => {
+                return `
+                    <h2>${user.name}</h2>
+                    <h4>${user.email}</h4>
+                    <p class = "phone">${user.phone}</p>
+                    <div>
+                        <a href="https://${user.website}">${user.website}</a>
+                    </div>
+                `
+            })
+            article.innerHTML = html.join('')
+        })
+
+
+    </script>
+</body>
+</html>
