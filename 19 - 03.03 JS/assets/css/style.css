@@ -83,3 +83,11 @@ body {
   padding: 2em;
   box-sizing: border-box;
 }
+
+.weather__header {
+  text-align: center;
+}
+
+.weather__description {
+  height: 5em;
+}
