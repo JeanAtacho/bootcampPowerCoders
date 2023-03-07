@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto document</title>
+    <style>
+        nav a,
+        nav li {
+            color: blueviolet;
+            text-decoration: none;
+            text-align: center;
+        }
+        .opaque {
+            opacity: ;
+        }
+    </style>
+</head>
+<body>
+    <!-- header>nav>ul>li*3>a[href="#"]{Link $$} -->
+    <header>
+        <nav class="main-nav">
+            <ul>
+                <li class="nav-item"><a href="#">Link 01</a></li>
+                <li class="nav-item active">Hola<a href="https://google.com">Google</a></li>
+                <li class="nav-item"><a href="#">Link 03</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <script>
+        const header = document.querySelector('header')
+        const nav = document.getElementById('main-nav')
+        // Convierte un HTMLColection en un nuevo Array
+        const lis = Array.from(document.getElementsByClassName('nav-item'))
+        // lis.forEach(element => // .log(element))
+
+        const a = document.getElementsByTagName('a')
+        // .log(a)
+
+        const varios = document.querySelectorAll('nav li, nav a')
+        // .log(varios[3].parentElement.parentElement.children)
+        // .log(varios)
+        // varios.forEach(elem => // .log(elem))
+
+        // Node (nodo) -> es cualquier elemento en el html, por ejemplo: un texto.
+
+        // Element (elemento) -> cualquier etiqueta
+
+        // .log(varias[3].parentElement.parentElement.firstElementChild)
+        // .log(varias[3].parentElement.parentElement.lastElementChild)
+        // .log(varias[3].parentElement.parentElement.children[1])
+        // .log(varias[3].parentElement.parentElement.childNodes[1])
+
+        const active = document.querySelector('.active')
+
+        // console.log(active.previousElementSibling)
+        // active.nextElementSibling.style.opacity = '.25'
+        // console.log(active.nextElementSibling)
+        // active.classList.toggle('opaque')
+
+        //forma manual
+        // if (active.classList.contains('opaque')) {
+        //     active.classList.remove('opaque')
+        // } else {
+        //     active.classList.add('opaque')
+        // }
+
+        // console.log(active.innerText)
+        // console.log(active.TextCont)
+
+        // getAtribute
+        // setAtribute
+        // hasAtribute
+        // removeAtribute
+        // console.log(active.children[0].getAttribute('href')
+        // link.setAtribute('target', '_blanck'))
+
+        const links_externos = document.querySelectorAll('a[href]')
+
+
+    </script>
+</body>
+</html>
