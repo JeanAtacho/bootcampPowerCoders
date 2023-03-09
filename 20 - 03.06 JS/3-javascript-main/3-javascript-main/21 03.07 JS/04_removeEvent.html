@@ -30,20 +30,20 @@
 
       const clicks = [0,0,0,0,0,0]
       images.forEach(image => {
-        image.addEventListener('click', (evento) => {
-          console.log(evento.target.dataset)
-
-          // const id = evento.target.dataset.id
-          const { id } = evento.target.dataset
-
-          clicks[id] += 1
-          if (clicks[id] < 3) {
-            evento.target.classList.toggle('opacity')
-          }
-          console.log(clicks)
-        })
+        image.addEventListener('click', clickHandler)
       })
 
+      function clickHandler(evento) {
+        // const id = evento.target.dataset.id
+        const { id } = evento.target.dataset
+
+        clicks[id] += 1
+        if (clicks[id] > 2) {
+          images[id].removeEventListener('click', clickHandler)
+        }
+        evento.target.classList.toggle('opacity')
+        console.log(clicks)
+      }
     })
   </script>
 </head>
