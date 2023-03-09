@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li></li>
+            <li>
+                <a href="#">
+                    <span>Hazme Click!</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        const a = document.querySelector('.click')
+        a.addEventListener('click', (e) =>{
+            //e.preventDefault()
+            console.log(e)
+        })
+    </script>
+</body>
+</html>

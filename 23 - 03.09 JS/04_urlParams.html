@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Search Params</title>
+</head>
+<body>
+    <form action="./03_results.html">
+        <input type="text" name="a" placeholder="Valor de a">
+        <input type="text" name="b" placeholder="Valor de b">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const form = document.forms.sumar 
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const params = new URLSearchParams()
+            params.set('a', form.a)
+            params.set('b', form.b)
+
+            console.log(params.toString())
+            window.location.href(`${form.action}?${params.toString()}`)
+        })
+    </script>
+    
+</body>
+</html>
