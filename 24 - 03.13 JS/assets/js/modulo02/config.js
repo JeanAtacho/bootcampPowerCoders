@@ -4,5 +4,5 @@ const config = {
 }
 
 export {
-  config: config
+  config
 }
