@@ -4,6 +4,7 @@ const navLinks = [
     {id: 1, text: 'Inicio', url: '#'},
     {id: 2, text: 'Productos', url: '#'},
     {id: 3, text: 'Contacto', url: '#'},
+    {id: 4, text: 'AboutUs', url: '#'},
 ]
 
 function NavBar(props) {
