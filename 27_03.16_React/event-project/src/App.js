@@ -1,17 +1,24 @@
-import { setState } from 'react'
-import './App.css';
+import { useState } from 'react';
+import marvelHeroes from './marvel_heroes.json'
 
 function App() {
-  const [number, setNumber] = setState(0)
+    const [heroes, setHeroes] = useState(marvelHeroes)
+    console.log(marvelHeroes);
+    
+    return (
+        <>
+            <h1>Buscar MarveL Heroes</h1>
 
-  const incrementar = () => setNumber(number++)
+            <form action="#">
+                <input type="text" name='search' placeholder='Que superheroe quieres buscar?' />
+                <button type="submit">Buscar</button>
+            </form>
 
-  return (
-    <div className="App">
-      <p className='number'>{number}</p>
-      <buttonn onClick={incrementar}>+</buttonn>
-    </div>
-  );
+            <ul className="heroes">
+                { heroes.map(heroe => <li key={heroe.id}>{heroe.name}</li>) }
+            </ul>
+        </>
+    )
 }
 
-export default App;
+export default App
