@@ -11,23 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.hero {
-  display: flex;
-  align-items: center;
-}
-
-.hero__image {
-  aspect-ratio: 1;
-  width: 100px;
-}
-
-.hero__image img {
-  object-fit: contain;
-  height: 100%;
-  width: 100%;
-}
-
-.hero__name {
-  padding-left: 1em;
-}
