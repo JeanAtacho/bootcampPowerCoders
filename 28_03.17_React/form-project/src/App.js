@@ -1,52 +1,64 @@
-import { useState } from 'React'
+import { useState } from 'react'
 
 function App() {
-  // const [state, setState] = useState ({
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   password: '',
+  const [state, setState] = useState({})
 
-  // })
 
-  const [email, setEmail] = useState('')
-
-  const emailChangeHandler = (e) => {
-    console.log(e.target.value)
-    setEmail(e.target.value)
+  const submitHandler = (e) => {
+    e.preventDefault()
+    console.log(state)
   }
 
+  const inputChangeHandler = ({ target }) => {
+    const { name, value } = target
+
+    const fieldData = {
+      value: value
+    }
+
+    if (!value.trim()) {
+      fieldData['error'] = `El campo ${name} esta vacio`
+    }
+
+    setState({ ...state, [name]: value })
+    console.log(state)
+  }
+
+  // true -> truthy
+  // false -> falsy
+
   return (
-    <form>
-
+    <form onSubmit={submitHandler}>
       <p>
-        <label htmlFor="">Nombre</label>
-        <input type="text" name="firtName"/>
+        <label htmlFor="firstName">Nombre</label>
+        <input type="text" name="firtName" id="firstName" onChange={inputChangeHandler} />
+        {state.firstName && state.firstName.error && <span class="error">{state.firstName.error}</span>}
       </p>
 
       <p>
-        <label htmlFor="">Apellido</label>
-        <input type="text" name="lastName"/>
+        <label htmlFor="lastName">Apellido</label>
+        <input type="text" name="lastName" id="lastName" onChange={inputChangeHandler} />
+        {state.lastName && state.lastName.error && <span class="error">{state.lastName.error}</span>}
       </p>
 
       <p>
-        <label htmlFor="">Email</label>
+        <label htmlFor="email">Email</label>
         <input 
         type="text" 
         name="email" 
-        value={email} 
-        onChange={emailChangeHandler}
+        id="email"
+        onChange={inputChangeHandler} 
         />
       </p>
 
       <p>
-        <label htmlFor="">Password</label>
-        <input type="text" name="password"/>
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" id="password" onChange={inputChangeHandler} />
       </p>
 
       <p>
-        <label htmlFor="">Confirmacion del password</label>
-        <input type="text" name="password_confirm"/>
+        <label htmlFor="password">Confirmacion del password</label>
+        <input type="password" name="password_confirm" id="password" onChange={inputChangeHandler} />
       </p>
 
       <button type="submit">Crear Usuario</button>
