@@ -12,6 +12,30 @@ code {
     monospace;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+}
+
+.form__input {
+  flex-grow: 1;
+  padding: 1em;
+  border: 1px solid blueviolet;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.form__submit {
+  background: transparent;
+  border: 1px solid blueviolet;
+  border-radius: 0 5px 5px 0;
+}
+
 .hero {
   display: flex;
   align-items: center;

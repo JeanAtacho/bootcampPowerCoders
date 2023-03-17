@@ -22,4 +22,4 @@ function App() {
 
 export default App;
 
-// React.createElement('h1', { className: 'Hola' }, 'Hola mundo')
+// React.createElement('h1', { className: 'hola' }, 'Hola mundo')
