@@ -2,7 +2,7 @@ fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(products => {
         const div = document.querySelector('.app')
-        // const ul = document.createElement('products')
+        const ul = document.createElement('products')
         const app = products.map(product => {
             return ` 
             <h1 class="app__title">Trending Products</h1>
