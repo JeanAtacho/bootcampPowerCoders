@@ -4,7 +4,7 @@ fetch('https://fakestoreapi.com/products')
         const div = document.querySelector('.app')
         // const ul = document.createElement('products')
         const app = products.map(product => {
-            return `
+            return ` 
             <h1 class="app__title">Trending Products</h1>
              <ul class="products">
                <li class="product">
@@ -23,9 +23,19 @@ fetch('https://fakestoreapi.com/products')
                         <a href="#" class="product__add-to-cart">Add to Cart</a>
                     </footer>
                  </div>
-              </li>
+              </li>       
            </ul>
          `
         })
         div.innerHTML = app.join('')
     })
+ 
+   
+    
+
+    
+
+
+
+
+

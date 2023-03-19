@@ -28,6 +28,9 @@ body {
   max-width: 1200px;
   width: 100%;
 }
+div{
+  display: block;
+}
 
 .products {
   display: grid;
