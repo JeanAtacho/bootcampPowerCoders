@@ -2,14 +2,11 @@ fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(products => {
         const div = document.querySelector('.app')
-        const ul = document.createElement('products')
         const app = products.map(product => {
-            return ` 
-            <h1 class="app__title">Trending Products</h1>
-             <ul class="products">
+            return `
                <li class="product">
-                    <div class="product__image-container">
-                    <img src="${product.image}" class="product__image" />
+               <div class="product__image-container">
+               <img src="${product.image}" class="product__image" />
                     </div>
                     <div class="product__content">
                     <header class="product__header">
@@ -19,23 +16,13 @@ fetch('https://fakestoreapi.com/products')
                         <p class="product__description">${product.description}</p>
                     </header>
                     <footer class="product__footer">
-                        <a href="#" data-id="1" class="product__like"><i class="icon-heart-empty"></i></a>
+                        <a href="#" data-id="${product.id}" class="product__like"><i class="icon-heart-empty"></i></a>
                         <a href="#" class="product__add-to-cart">Add to Cart</a>
                     </footer>
                  </div>
-              </li>       
-           </ul>
-         `
+              </li>
+            `
         })
-        div.innerHTML = app.join('')
+        
+        div.innerHTML += `<h1 class="app__title">Trending Products</h1> <ul class="products" >${ app.join('')} </ul>`
     })
- 
-   
-    
-
-    
-
-
-
-
-
