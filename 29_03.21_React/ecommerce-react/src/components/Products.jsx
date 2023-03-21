@@ -1,8 +1,9 @@
 import Product from "./Product.jsx"
 
-function Products(props) {
+function Products({ data }) {
+
   return <ul className="products">
-    <Product />
+      <Product />
   </ul>
 }
 
