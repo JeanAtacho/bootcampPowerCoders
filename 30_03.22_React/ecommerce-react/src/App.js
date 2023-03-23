@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
-import Details from "./components/Details"
-import Products from "./components/Products"
+import { useEffect, useState } from 'react'
+import Products from './components/Products.jsx'
+import Details from './components/Details.jsx'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -8,24 +8,26 @@ function App() {
 
   useEffect(() => {
     fetch('https://api.npoint.io/afbd0e90b1ef984e1d1e')
-    .then(res => res.json())
-    .then(data => setProducts(data))
+      .then(res => res.json())
+      .then(data => setProducts(data))
   }, [])
+
   const likesClickHandler = (id) => {
-    if (likes.includes(id)){
-      const new_arr = likes.filter(prod => prod !== id)
+    if (likes.includes(id)) {
+      const new_arr = likes.filter(prod => prod !== id )
       setLikes(new_arr)
-    }else{
+    } else {
       setLikes([...likes, id])
     }
   }
 
   return <>
-  <div className="app">
-      <h1 className="app__title">Trending products</h1>
-      <Products data={ products } likesClickHandler={likesClickHandler }/>
-      </div>
-      <Details likes={likes.length} />
-      </>
+    <div className="app">
+      <h1 className="app__title">Trending Products</h1>
+      <Products data={ products } likesClickHandler={likesClickHandler} />
+    </div>
+    <Details likes={likes.length} />
+  </>
 }
+
 export default App
