@@ -10,12 +10,12 @@ function App() {
     <>
       <h1>Rick & Morty</h1>
       <ul className={classes.characters}>
-      {characters.map(character => {
+      {characters.map(character => (
         <li className={classes.character} key={character.id}>
           <img src={character.image} alt={character.name} className={classes.character__image} />
           <h3 className={classes.character__image}>{character.name}</h3>
         </li>
-      })}
+      ))}
       </ul>
     </>
   )

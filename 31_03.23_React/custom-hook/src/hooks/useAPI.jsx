@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 import { APIBaseURL } from '../config.js'
 
-function useAPI() {
+function useAPI(url) {
     const [characters, setCharacters] = useState([])
 
     useEffect(() => {
@@ -17,10 +17,9 @@ function useAPI() {
         (async () => {
 
             try {
-
                 const res = await fetch(`${APIBaseURL}${url}`)
                 const data = await res.json()
-                setCharacters([
+                setCharacters(
                     ...characters,
                     ...data.results.map(char => {
                         const character = {
@@ -29,7 +28,7 @@ function useAPI() {
                             image: char.image
                         }
                         return character
-                    })]
+                    })
                 )
 
             } catch (error) {
