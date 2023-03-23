@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import json from './character.json'
+import { APIBaseURL } from '../config.js'
 
 function useAPI() {
     const [characters, setCharacters] = useState([])
@@ -18,27 +18,27 @@ function useAPI() {
 
             try {
 
-                setCharacters(
-                    json.results.map(char => {
+                const res = await fetch(`${APIBaseURL}${url}`)
+                const data = await res.json()
+                setCharacters([
+                    ...characters,
+                    ...data.results.map(char => {
                         const character = {
                             id: char.id,
                             name: char.name,
                             image: char.image
                         }
-
                         return character
-                    })
-
+                    })]
                 )
 
             } catch (error) {
                 console.error(error.message)
             }
-
         })()
-
-
     }, [])
 
     return characters
 }
+
+export default useAPI
