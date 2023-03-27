@@ -17,7 +17,7 @@ function Toast() {
     }
     return <form onSubmit={formSumitHandler}>
         <input type="text" value={text} onChange={inputHandleChange} />
-        <button conClick={formSumitHandler} > Mostrar alerta</button>
+        <button onClick={formSumitHandler} > Mostrar alerta</button>
     </form>
 }
 export default Toast

@@ -9,10 +9,10 @@ function ToastContextProvaider({children}) {
         if(message === '')return
 
         setAlerts([...alerts, message])
-
+    
         setTimeout(() => {
             setAlerts(prevAlerts => prevAlerts.filter(a => a !==message))
-        }, timeout);
+        }, 5000);
 
     }, [])
 
