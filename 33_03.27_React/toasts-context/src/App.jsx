@@ -1,15 +1,13 @@
-import Toasts from './components/Toasts.jsx'
-import ToastsContextProvider from './contexts/Toasts.jsx'
-
+import Toast from './components/Toast'
+import ToastContextProvaider from './contexts/Toast'
 function App() {
 
-
-  return (
+  return ( 
     <>
-      <ToastsContextProvider>
-        <h1>Escribe tu notificacion</h1>
-        <Toasts />
-      </ToastsContextProvider>
+    <ToastContextProvaider>
+      <h1>Escribe tu notificacion</h1>
+     <Toast /> 
+    </ToastContextProvaider>
     </>
   )
 }

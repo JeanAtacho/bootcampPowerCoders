@@ -1,8 +1,7 @@
-import { useContext } from 'react'
-import { ToastsContext } from '../contexts/Toasts'
+import { useContext } from "react";
+import { ToastContext } from "../contexts/Toast";
 
-function useToasts() {
-    return useContext(ToastsContext)
+function useToast() {
+    return useContext(ToastContext)
 }
-
-export default useToasts
+export default useToast
