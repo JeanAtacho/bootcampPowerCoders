@@ -5,7 +5,7 @@ function App() {
     <div >
       <h1>Esto es una importacion del archivo css</h1>
       <div className={square} >
-        <img src='./' className={image} />
+        <img src='./images/img_01.png' className={image} />
       </div>
     </div>
   )
